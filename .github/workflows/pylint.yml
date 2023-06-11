@@ -59,4 +59,4 @@ jobs:
 
       - name: Zip Python file
         run: |
-          zip -r my_python_project.zip project.py
+          zip -r my_python_project.zip project.py test_project.py
