@@ -70,3 +70,5 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t python-project:1.0.0 -f Dockerfile .
+      - name: Run Docker container
+        run: docker run python-project:latest
