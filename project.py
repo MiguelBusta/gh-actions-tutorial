@@ -1,5 +1,5 @@
-def sayHi():
+def say_hi():
     return 'Hello master'
 
 
-sayHi()
+say_hi()
