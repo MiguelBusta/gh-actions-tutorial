@@ -67,8 +67,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Build Docker image
+      - name: Build and run Docker image to create a container
         run: |
           docker build -t python-project:1.0.0 -f Dockerfile .
-      - name: Run Docker container
-        run: docker run python-project:latest
+          docker run python-project:latest
