@@ -14,7 +14,6 @@ permissions:
 jobs:
   lint:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         python-version: ["3.11"]
@@ -31,9 +30,9 @@ jobs:
       - name: Lint with pylint
         run: |
           pylint project.py
+
   test:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         python-version: ["3.11"]
@@ -50,3 +49,14 @@ jobs:
       - name: Testing with pytest
         run: |
           pytest
+
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Zip Python file
+        run: |
+          zip -r my_python_project.zip project.py
