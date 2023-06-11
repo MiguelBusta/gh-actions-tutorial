@@ -60,3 +60,13 @@ jobs:
       - name: Zip Python file
         run: |
           zip -r my_python_project.zip project.py test_project.py
+
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build Docker image
+        run: |
+          docker build -t python-project:1.0.0 -f Dockerfile .
