@@ -15,4 +15,5 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
+    """Return 'Hello World' as a string."""
     return "<p>Hello, World!</p>"
