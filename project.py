@@ -8,13 +8,11 @@ Date: 11/06/2023
 """
 
 
-def say_hi():
-    """
-    Function that returns a string
+from flask import Flask
 
-    This is only for test purposes
-    """
-    return 'Hello master'
+app = Flask(__name__)
 
 
-say_hi()
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"

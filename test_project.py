@@ -1,7 +1,7 @@
 # file to test return 'Hello World'
 
-from project import say_hi
+from project import hello_world
 
 
-def test_say_hi():
-    assert say_hi() == 'Hello master'
+def test_hello_world():
+    assert hello_world() == "<p>Hello, World!</p>"
