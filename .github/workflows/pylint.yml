@@ -26,6 +26,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          pip install Flask
           pip install pylint
       - name: Lint with pylint
         run: |
@@ -45,6 +46,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          pip install Flask
           pip install pytest
       - name: Testing with pytest
         run: |
@@ -61,7 +63,7 @@ jobs:
         run: |
           zip -r my_python_project.zip project.py test_project.py
 
-  docker:
+  dockerize:
     runs-on: ubuntu-latest
 
     steps:
@@ -70,3 +72,6 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t python-project:1.0.0 -f Dockerfile .
+      - name: Run Docker image
+        run: |
+          docker run python-project:1.0.0
