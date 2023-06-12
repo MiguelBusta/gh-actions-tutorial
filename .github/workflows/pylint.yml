@@ -75,4 +75,3 @@ jobs:
       - name: Push Docker image
         run: |
           docker run python-project:1.0.0 mik2001/python-project:1.0.0
-          docker push mik2001/python-project:1.0.0
