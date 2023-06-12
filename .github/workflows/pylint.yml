@@ -63,7 +63,7 @@ jobs:
         run: |
           zip -r my_python_project.zip project.py test_project.py
 
-  docker:
+  dockerize:
     runs-on: ubuntu-latest
 
     steps:
@@ -72,3 +72,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t python-project:1.0.0 -f Dockerfile .
+      - name: Push Docker image
+        run: |
+          docker run python-project:1.0.0 mik2001/python-project:1.0.0
+          docker push mik2001/python-project:1.0.0
