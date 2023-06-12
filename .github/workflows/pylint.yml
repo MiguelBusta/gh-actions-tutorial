@@ -74,4 +74,4 @@ jobs:
           docker build -t python-project:1.0.0 -f Dockerfile .
       - name: Run Docker image
         run: |
-          docker run -p 3000:3000 python-project:1.0.0
+          docker run -p 5000:5000 python-project:1.0.0
