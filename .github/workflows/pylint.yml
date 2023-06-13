@@ -86,7 +86,7 @@ jobs:
         uses: docker/build-push-action@v4
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: d0z3f1c0/demo-repository-ecr
+          ECR_REPOSITORY: n1r9a6h3/demo-repository
           IMAGE_TAG: latest
         with:
           tags: ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
@@ -125,7 +125,7 @@ jobs:
       - name: Deploy image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: d0z3f1c0/demo-repository-ecr
+          ECR_REPOSITORY: n1r9a6h3/demo-repository
           IMAGE_TAG: latest
         run: |
           docker load --input /tmp/$IMAGE_TAG.tar
